@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0025 0%, #3d0040 30%, #6b0050 60%, #ff4d8f 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 10s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Glowing orbs */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+    animation: orbFloat ease-in-out infinite;
+}
+.orb1 { width: 320px; height: 320px; background: #ff6eb4; top: -80px;  left: -80px;  animation-duration: 12s; }
+.orb2 { width: 260px; height: 260px; background: #c850c0; bottom: -60px; right: -60px; animation-duration: 15s; }
+.orb3 { width: 200px; height: 200px; background: #ff4d8f; top: 40%;   left: 50%;    animation-duration: 18s; }
+
+@keyframes orbFloat {
+    0%,100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* Stars */
+.star {
+    position: fixed;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none;
+    z-index: 0;
+    animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%,100% { opacity: 0.2; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.4); }
+}
+
+/* Rose petals */
+.petal {
+    position: fixed;
+    top: -30px;
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 0;
+    animation: petalFall linear infinite;
+    opacity: 0.85;
+}
+
+@keyframes petalFall {
+    0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.9; }
+    50%  { transform: translateY(50vh) rotate(180deg) translateX(30px); }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
+}
+
+/* Floating hearts */
+.hearts-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 1.4rem;
+    animation: floatUp linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) rotate(0deg) scale(0.8);  opacity: 0; }
+    10%  { opacity: 0.8; }
+    90%  { opacity: 0.6; }
+    100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Story card */
+.story-card {
+    background: rgba(20, 0, 30, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 120, 180, 0.25);
+    border-radius: 28px;
+    padding: 38px 34px;
+    max-width: 430px;
+    width: 92vw;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(255, 60, 130, 0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+    animation: popIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.85) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.card-icon {
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 12px #ff6eb4);
+}
+
+.story-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4em;
+    background: linear-gradient(135deg, #ff9ec8, #fff 60%, #ffb3d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.story-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82em;
+    color: rgba(255,180,210,0.7);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.divider {
+    color: #ff6eb4;
+    font-size: 1rem;
+    margin: 10px 0 18px;
+    opacity: 0.7;
+    letter-spacing: 8px;
+}
+
+.story-text {
+    font-size: 0.95em;
+    color: rgba(255, 230, 240, 0.88);
+    line-height: 1.9;
+    font-family: 'Poppins', sans-serif;
+}
+
+.story-text.mt { margin-top: 14px; }
+
+.highlight {
+    color: #ff9ec8;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.story-btn {
+    background: linear-gradient(135deg, #f857a6, #c850c0, #ff5858);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    padding: 13px 36px;
+    border-radius: 50px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 22px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(248, 87, 166, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s, background-position 0.4s;
+    animation: shimmerBtn 3s ease infinite;
+}
+
+@keyframes shimmerBtn {
+    0%,100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+
+.story-btn:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 8px 28px rgba(248, 87, 166, 0.7);
+}
+
+/* Apology card */
+.apology-card {
+    background: rgba(20, 0, 30, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 120, 180, 0.25);
+    border-radius: 28px;
+    padding: 30px 28px;
+    max-width: 430px;
+    width: 92vw;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(255, 60, 130, 0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+    animation: popIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.hidden {
+    display: none;
+}
+
+.gif {
+    width: 100%;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.question {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    background: linear-gradient(135deg, #ff9ec8, #fff 60%, #ffb3d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 12px 0 6px;
+    font-weight: 700;
+}
+
+.question-sub {
+    font-size: 0.8em;
+    color: rgba(255, 180, 210, 0.65);
+    margin-bottom: 20px;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #f857a6, #c850c0);
+    background-size: 200%;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 18px rgba(248, 87, 166, 0.5);
+    animation: shimmerBtn 3s ease infinite;
+}
+
+.yes-btn:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(248, 87, 166, 0.7);
+}
+
+.no-btn {
+    background: transparent;
+    color: rgba(255, 180, 210, 0.85);
+    border: 1.5px solid rgba(255, 120, 180, 0.5);
+    font-weight: 500;
+}
+
+.no-btn:hover {
+    background: rgba(255, 100, 160, 0.1);
+    border-color: #f857a6;
+}
+
+.no-btn.running {
+    position: fixed;
+    transition: left 0.1s, top 0.1s;
+}
+
+/* ── Knee-down Scene ── */
+.knee-scene {
+    background: rgba(20, 0, 30, 0.72);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 120, 180, 0.25);
+    border-radius: 28px;
+    padding: 28px 24px 24px;
+    max-width: 480px;
+    width: 92vw;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(255, 60, 130, 0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+    animation: popIn 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.scene-label {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    color: #ff9ec8;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 12px rgba(255,110,180,0.5);
+}
+
+.scene-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin: 0 0 16px;
+}
+
+.char-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Girl sways gently */
+.girl-wrap svg {
+    animation: gentleSway 3s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+@keyframes gentleSway {
+    0%,100% { transform: rotate(-2deg); }
+    50%      { transform: rotate(2deg); }
+}
+
+/* Boy kneels down on entry */
+.boy-svg {
+    animation: kneeDown 1s cubic-bezier(.4,0,.2,1) forwards;
+    transform-origin: bottom center;
+}
+
+@keyframes kneeDown {
+    0%   { transform: translateY(-20px) scaleY(1.1); opacity: 0; }
+    60%  { transform: translateY(4px) scaleY(0.97); }
+    100% { transform: translateY(0px) scaleY(1); opacity: 1; }
+}
+
+.char-name-tag {
+    margin-top: 8px;
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.girl-tag {
+    background: rgba(255, 87, 166, 0.2);
+    color: #ffb3d9;
+    border: 1px solid rgba(255,120,180,0.3);
+}
+
+.boy-tag {
+    background: rgba(74, 144, 226, 0.2);
+    color: #90caf9;
+    border: 1px solid rgba(74,144,226,0.3);
+}
+
+/* Speech bubble */
+.sorry-bubble {
+    background: rgba(255, 20, 80, 0.1);
+    border: 1.5px solid rgba(255, 120, 180, 0.4);
+    border-radius: 18px;
+    padding: 14px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    color: #ffcce0;
+    font-style: italic;
+    margin: 0 auto 20px;
+    max-width: 340px;
+    position: relative;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease 0.9s both;
+    text-shadow: 0 0 10px rgba(255,100,160,0.3);
+}
+
+.bubble-quote {
+    font-size: 1.4em;
+    color: #f857a6;
+    vertical-align: -4px;
+    opacity: 0.7;
+}
+
+.sorry-bubble::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: rgba(255, 120, 180, 0.4);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just For You, Samridhi 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background layers -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <div class="container" id="mainContainer">
+
+        <!-- Screen 1: Intro -->
+        <div class="story-card" id="storyCard">
+            <div class="card-icon">🎬</div>
+            <h2 class="story-title">Samridhi...</h2>
+            <p class="story-subtitle">I have something to say</p>
+            <div class="divider"><span>✦</span></div>
+            <p class="story-text">
+                That evening was yours — you came with me,<br>
+                and I wasn't really there for you. 😔
+            </p>
+            <p class="story-text mt">
+                You felt like <span class="highlight">Sourav was ignoring you</span> —<br>
+                and honestly, you weren't wrong.
+            </p>
+            <p class="story-text mt">
+                You mean the world to me, Samridhi.<br>
+                And today, I'm here to say sorry — from the heart. 🥺
+            </p>
+            <button class="story-btn" id="storyBtn">Will you hear me out? 💌</button>
+        </div>
+
+        <!-- Screen 2: Knee-down sorry scene -->
+        <div class="knee-scene hidden" id="kneeScene">
+            <div class="scene-label">Sourav 🧎 on his knees for Samridhi...</div>
+
+            <div class="scene-wrapper">
+
+                <!-- Girl: Samridhi standing, arms crossed -->
+                <div class="char-wrap girl-wrap">
+                    <svg width="90" height="200" viewBox="0 0 90 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hair -->
+                        <ellipse cx="45" cy="28" rx="26" ry="10" fill="#3b1f0a"/>
+                        <rect x="19" y="24" width="8" height="40" rx="4" fill="#3b1f0a"/>
+                        <rect x="63" y="24" width="8" height="40" rx="4" fill="#3b1f0a"/>
+                        <!-- Face -->
+                        <circle cx="45" cy="32" r="22" fill="#f5c5a3"/>
+                        <!-- Eyes (annoyed) -->
+                        <path d="M34 28 Q37 25 40 28" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M50 28 Q53 25 56 28" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <circle cx="37" cy="30" r="2.5" fill="#333"/>
+                        <circle cx="53" cy="30" r="2.5" fill="#333"/>
+                        <!-- Mouth (pouty) -->
+                        <path d="M38 40 Q45 37 52 40" stroke="#c0725a" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <!-- Blush -->
+                        <ellipse cx="33" cy="37" rx="5" ry="3" fill="#ffb3c1" opacity="0.6"/>
+                        <ellipse cx="57" cy="37" rx="5" ry="3" fill="#ffb3c1" opacity="0.6"/>
+                        <!-- Neck -->
+                        <rect x="40" y="53" width="10" height="12" rx="3" fill="#f5c5a3"/>
+                        <!-- Dress body -->
+                        <path d="M20 65 Q45 60 70 65 L74 140 Q45 148 16 140 Z" fill="#f857a6"/>
+                        <!-- Dress detail -->
+                        <path d="M30 80 Q45 76 60 80" stroke="#ff9ec8" stroke-width="2" fill="none"/>
+                        <!-- Arms crossed -->
+                        <path d="M20 75 Q10 90 18 105 Q30 98 38 95" stroke="#f5c5a3" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <path d="M70 75 Q80 90 72 105 Q60 98 42 97" stroke="#f5c5a3" stroke-width="10" stroke-linecap="round" fill="none"/>
+                        <!-- Skirt flare -->
+                        <path d="M16 130 Q10 155 18 165 Q45 172 72 165 Q80 155 74 130 Q45 140 16 130Z" fill="#f857a6"/>
+                        <!-- Legs -->
+                        <rect x="32" y="162" width="11" height="30" rx="5" fill="#f5c5a3"/>
+                        <rect x="47" y="162" width="11" height="30" rx="5" fill="#f5c5a3"/>
+                        <!-- Shoes -->
+                        <ellipse cx="37" cy="193" rx="10" ry="5" fill="#c2185b"/>
+                        <ellipse cx="53" cy="193" rx="10" ry="5" fill="#c2185b"/>
+                    </svg>
+                    <div class="char-name-tag girl-tag">Samridhi 😤</div>
+                </div>
+
+                <!-- Boy: Sourav kneeling -->
+                <div class="char-wrap boy-wrap">
+                    <svg class="boy-svg" width="90" height="200" viewBox="0 0 90 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Hair -->
+                        <path d="M20 28 Q22 10 45 8 Q68 10 70 28 Q65 18 45 17 Q25 18 20 28Z" fill="#2c1a0e"/>
+                        <!-- Face -->
+                        <circle cx="45" cy="34" r="22" fill="#f5c5a3"/>
+                        <!-- Eyes (puppy / teary) -->
+                        <circle cx="37" cy="32" r="4" fill="#fff"/>
+                        <circle cx="53" cy="32" r="4" fill="#fff"/>
+                        <circle cx="37" cy="33" r="2.5" fill="#4a3000"/>
+                        <circle cx="53" cy="33" r="2.5" fill="#4a3000"/>
+                        <!-- Tear drops -->
+                        <ellipse cx="32" cy="40" rx="2" ry="3" fill="#90caf9" opacity="0.85"/>
+                        <ellipse cx="58" cy="40" rx="2" ry="3" fill="#90caf9" opacity="0.85"/>
+                        <!-- Eyebrows sad -->
+                        <path d="M32 26 Q37 23 40 26" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <path d="M50 26 Q53 23 58 26" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <!-- Mouth sad -->
+                        <path d="M38 44 Q45 48 52 44" stroke="#c0725a" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        <!-- Blush -->
+                        <ellipse cx="33" cy="39" rx="5" ry="3" fill="#ffb3c1" opacity="0.5"/>
+                        <ellipse cx="57" cy="39" rx="5" ry="3" fill="#ffb3c1" opacity="0.5"/>
+                        <!-- Neck -->
+                        <rect x="40" y="55" width="10" height="10" rx="3" fill="#f5c5a3"/>
+                        <!-- Shirt -->
+                        <path d="M18 65 Q45 58 72 65 L70 120 Q45 126 20 120 Z" fill="#4a90e2"/>
+                        <!-- Shirt collar -->
+                        <path d="M38 65 L45 75 L52 65" stroke="white" stroke-width="2" fill="none"/>
+                        <!-- Left arm reaching forward (offering hand) -->
+                        <path d="M18 75 Q5 95 12 115 Q20 118 28 112" stroke="#f5c5a3" stroke-width="11" stroke-linecap="round" fill="none"/>
+                        <!-- Right arm down -->
+                        <path d="M72 75 Q82 90 78 108" stroke="#f5c5a3" stroke-width="11" stroke-linecap="round" fill="none"/>
+                        <!-- Kneeling: one knee on ground -->
+                        <!-- Upper legs -->
+                        <rect x="28" y="118" width="14" height="38" rx="6" fill="#2c3e6b" transform="rotate(-10 35 118)"/>
+                        <rect x="48" y="118" width="14" height="20" rx="6" fill="#2c3e6b"/>
+                        <!-- Knee on ground -->
+                        <ellipse cx="55" cy="155" rx="12" ry="8" fill="#2c3e6b"/>
+                        <!-- Foot back -->
+                        <ellipse cx="62" cy="162" rx="13" ry="6" fill="#1a252f"/>
+                        <!-- Standing leg foot -->
+                        <ellipse cx="33" cy="162" rx="11" ry="6" fill="#1a252f" transform="rotate(-10 33 162)"/>
+                    </svg>
+                    <div class="char-name-tag boy-tag">Sourav 🥺</div>
+                </div>
+
+            </div>
+
+            <div class="sorry-bubble">
+                <span class="bubble-quote">❝</span>
+                Samridhi... I messed up.<br>
+                I am truly, deeply sorry. 💔
+                <span class="bubble-quote">❞</span>
+            </div>
+            <button class="story-btn" id="kneeBtn">Hear him out 💌</button>
+        </div>
+
+        <!-- Screen 3: Apology flow -->
+        <div class="apology-card hidden" id="apologyCard">
+            <img class="gif" alt="gif" src="images/cute.gif">
+            <h2 class="question" id="question">Will you forgive Sourav? 🥺</h2>
+            <p class="question-sub" id="questionSub">He really means it this time...</p>
+            <div class="btn-group">
+                <button class="yes-btn" id="yesBtn">Yes, I forgive you 💖</button>
+                <button class="no-btn" id="noBtn">Not yet</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
